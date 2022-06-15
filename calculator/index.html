@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+    <title>Calculator</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="calculator.css">
+
+   
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="result">
+            <div class="inputs"></div>
+            <div class="outputs"></div>
+              
+        </div>
+
+        <div class="buttons">
+            <button class="button num-button">1</button>    
+            <button class="button num-button">2</button>
+            <button class="button num-button">3</button>
+            <button class="button num-button calc-action-btn">+</button>
+            <button class="button num-button">4</button>
+            <button class="button num-button">5</button>
+            <button class="button num-button">6</button>
+            <button class="button num-button calc-action-btn">-</button>
+            <button class="button num-button">7</button>
+            <button class="button num-button">8</button>
+            <button class="button num-button">9</button>
+            <button class="button num-button calc-action-btn">/</button>
+            <button class="button num-button">0</button>
+            <button class="button action-btn" id="clear">C</button>
+            <button class="button num-button">00</button>
+            <button class="button calc-action-btn" id="equal">=</button>
+            
+            
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        // let result = document.getElementById('result'); 
+       // let buttons = Array.from(document.getElementsByClassName('buttons')); 
+
+
+       // document.querySelectorAll(".buttons button").forEach (btn => {
+       //     btn.addEventListener("click", () => {
+        //        let inputs = document.querySelector(".inputs")
+        //  let outputs = document.querySelector(".outputs")
+        //  let value = btn.innerHTML
+        //  let numberedValues = parseInt(value)
+        //  console.log(calculation)
+        //    })
+       // })
+
+       let btns = document.querySelectorAll(".num-button");
+       let allBtns = document.querySelectorAll(".button");
+       let result = document.querySelector(".result");
+       let inputs  = document.querySelector(".inputs");
+       let outputs = document.querySelector(".outputs");
+       let clearBtn = document.querySelector('#clear');
+
+       let equal = document.querySelector("#equal");
+       let equalBtn = document.getElementById("equal")
+
+       let btnSpread = [...btns];
+       // let allBtnSpread = [...allBtns];
+
+       // For Number Inputs
+       btnSpread.forEach((button, i) => {
+           button.addEventListener("click", () => {
+               if (inputs.innerHTML == "0") {
+                   inputs.innerHTML = "";
+               }
+
+               let value = btns[i].innerHTML;
+               inputs.innerHTML += value;
+           });
+       });
+
+      // Functions to evaluate strings
+      function evaluate (fn) {
+          return new Function('return ' + fn)();
+      }
+
+      // To calculate all inputs
+          equal.addEventListener("click",() => {
+          let allInputs = inputs.innerHTML;
+          
+          outputs.innerHTML = evaluate(allInputs);
+
+          console.log(evaluate(allInputs));
+
+            
+      })
+
+      // To clear
+      clearBtn.addEventListener("click", () => {
+          inputs.innerHTML = "";
+          outputs.innerHTML = "";
+      })
+
+
+                  
+        
+    </script>
+
+</body>
+</html>
