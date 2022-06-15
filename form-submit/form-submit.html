@@ -1,0 +1,164 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Form Submit</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+        
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'WeblySleek UI', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .main {
+            width: 480px;
+            height: 600px;
+            background-color: white;
+        }
+
+        .title {
+            margin: 5px;
+            padding-bottom: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            font-size: 20px;
+            color: #616676;
+        }
+
+        .wrapper {
+            border: 2px #F0F0EF solid;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: #F0F0EF;
+        }
+
+        label {
+            color: #616676;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .form-control {
+            display: block;
+            border-color: #ededeb !important;
+            height: 42px;
+            border: 2px solid;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .email {
+            margin: 5px;
+            padding: 50px 30px 5px 30px;
+        }
+
+        .pwd {
+            margin: 5px;
+            padding: 10px 30px 5px 30px;   
+        }
+
+        ::placeholder {
+            padding-left: 10px;
+            color: #999999;
+        }
+
+        .button {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 10px 12px;
+            text-decoration: none;
+            margin: 9px 27px;
+            cursor: pointer;
+            float: right;
+            width: 100px;
+            border-radius: 2px;
+            font-weight: 200;
+            font-family: 'WeblySleek UI', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 500; 
+        }
+
+        input[type=button] {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 10px 12px;
+            text-decoration: none;
+            margin: 9px 35px;
+            cursor: pointer;
+            width: 100px;
+            border-radius: 2px;
+            font-weight: 200; 
+            font-family: 'WeblySleek UI', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 500;  
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .after-wrapper {
+            padding: 10px 30px 30px 30px;
+        }
+
+        .rs {
+            text-decoration: none;
+            color: #616676;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: #04AA6D;
+        }
+    </style>    
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="title">
+          <img src="formsubmit.png">
+          ormsubmit
+
+        </div> 
+        <div class="wrapper">
+            <form action="#">
+                <div class="email">
+                    <label for="email">Your Email*</label> 
+                    <input class="form-control" type="email" id="email" name="email" placeholder="Enter your email">   
+                </div>
+
+                <div class="pwd">
+                    <label for="pwd">Your Password*</label> 
+                    <input class="form-control" type="password" id="pwd" name="pwd" placeholder="Enter your password"> 
+                </div>
+
+                <div>
+                    <button class="button">Sign In</button> 
+                    <input type="button" value="Register">
+                </div>
+            </form>
+            <div class="clear"></div>
+
+            <div class="after-wrapper">
+            <p>Forget your password? <a class="rs" href="">Reset Now</a> </p>  
+
+            <p>Don't have an account? <a class="rs" href="">Sign Up</a> </p> 
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
